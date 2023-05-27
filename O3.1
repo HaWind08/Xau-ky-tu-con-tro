@@ -1,0 +1,30 @@
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+int main()
+{
+	string str;
+
+	cout << "Nhap chuoi: ";
+	getline(cin, str);
+
+	int count = 0;
+	string result;
+
+	for (int i = 0; i < str.length(); i++)
+	{
+		char S = str[i];
+		if (S >= 'a' && S <= 'z')
+		{
+			count++;
+		}
+		if (S != 'a') result += S;
+	}
+
+	cout << "So chu cai thuong: " << count << endl;
+	cout << "Xau ky tu sau khi xoa 'a' ra khoi xau: " << result << endl;
+	
+	return 0;
+}
