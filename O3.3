@@ -1,0 +1,36 @@
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+string Insert_C(string str,char C,int k)
+{
+	cout << "Nhap ky tu C: "; cin >> C;
+	cout << "Nhap vi tri k: "; cin >> k;
+
+	if (k < 1 || k > str.length() + 1)
+	{
+		cout << "Vi tri chen khong hop le" << endl;
+		return str;
+	}
+
+	str.insert(k - 1, 1, C);
+	return str;
+}
+
+int main()
+{
+	string str;
+	char C;
+	int k;
+	do
+	{
+		cout << "Nhap chuoi: ";
+		getline(cin, str);
+	} while (str.length() > 80);
+	
+	string result = Insert_C(str, C, k);
+	cout << "Xau ket qua: " << result;
+
+	return 0;
+}
