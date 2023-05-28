@@ -1,0 +1,38 @@
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+bool isStringValid(string& str)
+{
+	int count = 0;
+
+	for (int i = 0; i < str.length(); i++)
+	{
+		if (str[i] == ' ' && str[i + 1] == ' ') return false;
+		count++;
+	}
+
+	if (count > 10) return false;
+
+	return true;
+}
+
+int main()
+{
+	string str;
+	do
+	{
+		cout << "Nhap chuoi: ";
+		getline(cin, str);
+	} while (str.length() > 50);
+	 
+	if (isStringValid(str))
+	{
+		cout << "Xau hop le."  << endl;
+	}
+	else cout << "Xau khong hop le." << endl;
+
+	return 0;
+
+}
