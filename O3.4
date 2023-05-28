@@ -1,0 +1,33 @@
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+bool Check(string str)
+{
+	int M = 0, D = 0; // M : mo , D : dong
+	for (int i = 0; i < str.length(); i++)
+	{
+		if (str[i] == '(') M++;
+		if (str[i] == ')') D++;
+		if (M < D) return false;
+	}
+
+	if (M != D) return false;
+	return true;
+}
+
+int main()
+{
+	string str;
+	cout << "Nhap xau ky tu: ";
+	getline(cin, str);
+
+	if (Check(str))
+	{
+		cout << "Xau hop le.";
+	}
+	else cout << "Xau khong hop le.";
+
+	return 0;
+}
