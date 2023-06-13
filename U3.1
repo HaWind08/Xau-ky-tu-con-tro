@@ -1,0 +1,53 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+
+void Nhap(char S[])
+{
+	cout << "Nhap xau ky tu: ";
+	cin.getline(S,30);	
+} 
+
+void Xuat(char S[])
+{
+	cout << S << endl;
+}
+
+void DemThuong(char S[])
+{
+	int count = 0;
+	for (int i = 0; i < strlen(S); i++)
+	{
+		if (S[i] >= 'a' && S[i] <= 'z') count++;
+	}
+
+	cout << "So ky tu thuong la: " << count << endl;
+}
+
+void xoakytu(char S[])
+{
+	for(int i = 0; i < strlen(S); i++)
+	{
+		while(S[i] == 'a')
+		{
+			for(int j = i; j < strlen(S); j++)
+			{
+				S[j] = S[j + 1];
+			}
+		}
+	}
+}
+
+int main()
+{
+	char S[50];
+	Nhap(S);
+
+	DemThuong(S);
+	
+	xoakytu(S);
+	cout << "Xau sau khi thay doi: ";
+	Xuat(S);
+
+	return 0;
+}
