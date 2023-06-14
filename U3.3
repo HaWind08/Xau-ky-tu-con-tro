@@ -1,0 +1,52 @@
+#include<iostream>
+#include<string.h>
+
+using namespace std;
+
+void Nhap(char S[], char C)
+{
+	cout << "Nhap xau ky tu: ";
+	cin.getline(S,81);	
+} 
+
+void Xuat(char S[], char C)
+{
+	cout << S;
+}
+
+void Chen(char S[], char C, int k)
+{
+	for(int i = strlen(S) + 1; i >= k;i--)
+	{
+		S[i] = S[i - 1];
+	}
+	S[k - 1] = C; // vi dieu kien ko nhap duoc k = 0
+	
+}
+
+int main()
+{
+	char S[100];
+	char C;
+	int k;
+	
+	Nhap(S,C);
+	
+	cout << "Nhap mot ki tu vao C: "; cin >> C;
+	
+	do
+	{
+		cout << "Nhap mot so nguyen k: "; cin >> k;
+	} while(k < 1 || k > strlen(S) + 1);
+
+	Chen(S,C,k);
+	
+	cout << "Xau sau khi chen: ";
+	Xuat(S,C);
+	
+	return 0;
+}
+
+
+
+
